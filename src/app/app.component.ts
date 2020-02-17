@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TiendaPlat';
+  title = 'TiendaPlatzi';
+
+  // array
+  items = [ 'laura', 'maria', 'nicolas'];
+  // metodo agregar 
+  additems() {
+    this.items.push ('nuevo item');
+  }
+  // metodo eliminar
+   deleteItems(index: number) {
+     this.items.splice(index, 1);
+   }
 }
