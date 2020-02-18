@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Product } from './product.model';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'TiendaPlatzi';
 
+  // crear objeto 
+
+  objeto = {};
+
   // array
   items = [ 'laura', 'maria', 'nicolas'];
 // array de objetos 
-  products: IProduct[] = [
+  products: Product [] = [
     {
       id: '1',
       image: 'assets/images/camiseta.png',
