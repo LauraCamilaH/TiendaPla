@@ -68,4 +68,9 @@ export class AppComponent {
    deleteItems(index: number) {
      this.items.splice(index, 1);
    }
+   // el output emite el id que es de tipo number
+   clickProduct(id: number){
+     console.log('product');
+     console.log(id);
+   }
 }

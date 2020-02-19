@@ -12,6 +12,7 @@
 <div *ngIf="title  === 'Juan'">
   este es Juan
 </div>
+<app-product [product]="products[3]"></app-product>
 
 <div [ngSwitch]=title>
   <p *ngSwitchCase="'Dickinson'">Este es Dickinson</p>
@@ -29,8 +30,8 @@
     <button (click)="deleteItems(i)">delete</button>
   </li>
 </ul>
-<div *ngFor="let product of products">
-  {{product.title}}
-  <img [src]="product.image" alt="">
-  {{product.price}}
+<div *ngFor="let p of products">
+<!-- para indicar los Outputs, escribe el nombre entre parentesis y se crea un metodo en el app. componet 
+  que lo implementa -->
+   <app-product (productClicked) ="clickProduct($event)" [product]="p"></app-product>
 </div>
