@@ -13,6 +13,8 @@ export class AppComponent {
 
   objeto = {};
 
+  power = 10;
+
   // array
   items = [ 'laura', 'maria', 'nicolas'];
 // array de objetos 
