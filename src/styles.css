@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0px;
+    padding: 0px;
+}
+/*  se crea una clase para mostar los productos en forma de tabla*/
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+}
+
+/* se utiliza para que las imagenes se adapten*/
+@media(min-width: 576px){
+
+.product-grid {
+    
+    grid-template-columns: repeat(4, 1fr);
+ }
+}

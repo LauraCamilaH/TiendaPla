@@ -1,13 +1,26 @@
 
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {
+    Component, 
+    Input, 
+    Output, 
+    EventEmitter,
+    OnChanges, 
+    SimpleChanges, 
+    OnInit, 
+    DoCheck, 
+    OnDestroy} from '@angular/core';
 import { Product } from '../product.model';
+//decorador
 
 @Component ({
     selector: 'app-product',
     // se nombra el archivo que vamos a llamar.
-    templateUrl: './product.component.html'
+    templateUrl: './product.component.html',
+    // estilos se hace referencia al archivo
+    styleUrls: ['./product.component.scss'],
+
 })
-export class ProductComponent {
+export class ProductComponent implements OnChanges, OnInit, DoCheck, OnDestroy{
 
     @Input() product: Product;
       // El eventemitter debe tener un valor incial 
@@ -15,9 +28,27 @@ export class ProductComponent {
 
 // constructor 
 
-constructor() {
-    console.log('constructor');
+today = new Date();
 
+constructor() {
+    console.log('1. constructor');
+
+        }
+
+ngOnChanges(changes: SimpleChanges){
+            console.log('2. ngOnchanges');
+          console.log(changes);
+        }
+
+ngOnInit (){
+console.log ('3. ngOnInit'); 
+}
+
+ngDoCheck(){
+    console.log('4. ngDoCheck');
+}
+ngOnDestroy(){
+    console.log('5. Eliminado ngOnDestroy');
 }
 
     // crear metodo que reacciona al click

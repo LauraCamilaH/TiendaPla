@@ -30,8 +30,12 @@
     <button (click)="deleteItems(i)">delete</button>
   </li>
 </ul>
-<div *ngFor="let p of products">
+<div class="product-grid" >
 <!-- para indicar los Outputs, escribe el nombre entre parentesis y se crea un metodo en el app. componet 
   que lo implementa -->
-   <app-product (productClicked) ="clickProduct($event)" [product]="p"></app-product>
+   <app-product 
+    *ngFor="let p of products"
+     (productClicked) ="clickProduct($event)"
+      [product]="p">
+     </app-product>
 </div>

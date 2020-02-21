@@ -1,4 +1,11 @@
-<h3>{{product.title}}</h3>
+
+<!--  se utiliza pipes para cambiar poder modificar los datos | uppercase pasa todo a mayuscula.-->
+<h3>{{product.title | uppercase}}</h3>
 <img [src]= "product.image"alt = "">
-<strong>{{product.price}}</strong>
+<!-- el pipe currency automaticamnet-->
+<strong>{{product.price | currency }}</strong>
+<!-- slice corta automaticamente le parrafo-->
+<p>{{product.description | slice:0:10}}</p>
+<p>{{today |date: 'medium'}}</p>
+
 <button (click)= "AddCart()"> Agregar al carrito </button>
